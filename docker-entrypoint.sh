@@ -4,12 +4,12 @@ MONACOCOIN_DATA=/home/monacocoin/.monacocoin
 cd /home/monacocoin/monacocoind
 
 if [ $(echo "$1" | cut -c1) = "-" ]; then
-  echo "$0: assuming arguments for monacocoind"
+  echo "$0: assuming arguments for monacoCoind"
 
-  set -- monacocoind "$@"
+  set -- monacoCoind "$@"
 fi
 
-if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "monacocoind" ]; then
+if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "monacoCoind" ]; then
   mkdir -p "$MONACOCOIN_DATA"
   chmod 700 "$MONACOCOIN_DATA"
   chown -R monacocoin "$MONACOCOIN_DATA"
@@ -19,7 +19,7 @@ if [ $(echo "$1" | cut -c1) = "-" ] || [ "$1" = "monacocoind" ]; then
   set -- "$@" -datadir="$MONACOCOIN_DATA"
 fi
 
-if [ "$1" = "monacocoind" ] || [ "$1" = "monacocoin-cli" ] || [ "$1" = "monacocoin-tx" ]; then
+if [ "$1" = "monacoCoind" ] || [ "$1" = "monacoCoin-cli" ] || [ "$1" = "monacoCoin-tx" ]; then
   echo
   exec gosu monacocoin "$@"
 fi
