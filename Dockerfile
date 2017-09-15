@@ -12,7 +12,7 @@ RUN cd /home/monacocoin && \
     chmod 700 .ssh && \
     ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts && \
     ssh-keyscan -t rsa bitbucket.org >> ~/.ssh/known_hosts && \
-    git clone  --branch $DAEMON_RELEASE git@github.com:monacocoin-net/monacoCoin-Core.git monacocoind && \
+    git clone  --branch $DAEMON_RELEASE https://github.com/monacocoin-net/monacoCoin-Core.git monacocoind && \
     cd /home/monacocoin/monacocoind && \
     ./autogen.sh && \
     ./configure LDFLAGS="-L/home/monacocoin/db4/lib/" CPPFLAGS="-I/home/monacocoin/db4/include/" && \
