@@ -1,0 +1,9 @@
+---
+daemon:
+#  build: .
+  image: quay.io/kwiksand/monacocoind:latest
+  ports:
+   - "24156:24156"
+   - "24157:24157"
+  volumes:
+   - /media/crypto/monacocoin:/home/monacocoin/.monacocoin
